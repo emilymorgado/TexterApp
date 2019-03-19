@@ -3,19 +3,23 @@ import { FlatList, Text, View, StyleSheet } from 'react-native';
 
 // STYLES
 const styles = StyleSheet.create({
-  // viewContainer: {
-  //   backgroundColor: #fff,
-  // },
+  viewContainer: {
+    paddingTop: '25%',
+    backgroundColor: '#fff',
+    width: '100%',
+    height: '100%',
+  },
   basicBubble: {
     borderStyle: 'solid',
     borderWidth: 3,
     borderRadius: 15,
     fontSize: 22,
+    // lineHeight: 3,
     padding: '1%',
     flexDirection: 'column',
     marginBottom: 15,
-    maxWidth: '48%',
-  }
+    maxWidth: '65%',
+  },
   bot: {
     borderColor: '#C34271',
     backgroundColor: '#F070A1',
@@ -39,7 +43,7 @@ const TextBubble = props => (
         {key: 'James', text: 'Yes!', from: 'bot'},
         {key: 'Joel', text: 'I love validating others.', from: 'bot'},
       ]}
-      renderItem={({item}) => <Text style={{[styles.basicBubble, styles[item.from]]}}>{item.text}</Text>}
+      renderItem={({item}) => <Text style={[styles.basicBubble, styles[item.from]]}>{item.text}</Text>}
     />
   </View>
 )
